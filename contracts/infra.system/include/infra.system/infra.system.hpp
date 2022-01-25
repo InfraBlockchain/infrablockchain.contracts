@@ -60,7 +60,8 @@ namespace infra_system {
    static constexpr const int64_t  vote_weight_timestamp_epoch = 1609459200ll;  // 01/01/2021 @ 12:00am (UTC) (seconds)
 
    static constexpr const uint32_t top_tx_vote_receiver_list_fetch_count = 30;
-   static constexpr const uint32_t max_elected_block_producer_count = 5; // initial bp count, adjusted by system contract upgrade by bp consensus
+   static constexpr const uint32_t min_elected_block_producer_count = 7;  // initial bp count, adjusted by system contract upgrade by bp consensus
+   static constexpr const uint32_t max_elected_block_producer_count = 21; // max elected bp count, adjusted by system contract upgrade by bp consensus
 
 
    // Defines new global state parameters.

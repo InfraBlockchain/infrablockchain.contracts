@@ -79,7 +79,8 @@ namespace infra_system {
          }
       }
 
-      if ( top_producers.size() < _gstate.last_producer_schedule_size ) {
+      if ( top_producers.size() < min_elected_block_producer_count
+         || top_producers.size() < _gstate.last_producer_schedule_size ) {
          return;
       }
 
