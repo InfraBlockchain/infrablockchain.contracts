@@ -33,44 +33,41 @@ namespace infrablockchain { namespace contracts {
 
       /**
        * Issue new token
-       * @param t - token id (token account name)
        * @param to - account name receiving the issued tokens
        * @param qty - token quantity (amount, symbol) to issue
-       * @param tag - user tag string to identity a specific issue action (application-specific purpose)
+       * @param memo - user memo string to identity a specific issue action (application-specific purpose)
        */
       [[eosio::action]]
-      void issue( const name& t, const name& to, const asset& qty, const string& tag );
+      void issue( const name& to, const asset& quantity, const string& memo );
 
       /**
        * Transfer token
-       * @param t - token id (token account name)
        * @param from - account name sending tokens
        * @param to - account name receiving tokens
        * @param qty - token quantity (amount, symbol) to transfer
-       * @param tag - user tag string to identity a specific transfer action (application-specific purpose)
+       * @param memo - user memo string to identity a specific transfer action (application-specific purpose)
        */
       [[eosio::action]]
-      void transfer( const name& t, const name& from, const name& to, const asset& qty, const string& tag );
+      void transfer( const name& from, const name& to, const asset& quantity, const string& memo );
 
       /**
        * Transaction fee payment
        * if current token account is selected as a system token,
        * 'txfee' actions are generated from InfraBlockchain core after processing actions on a submitted transaction
-       * @param t - token id (token account name)
        * @param payer - account name paying transaction fee
        * @param fee - token quantity (amount, symbol) being charged as transaction fee
        */
       [[eosio::action]]
-      void txfee( const name& t, const name& payer, const asset& fee );
+      void txfee( const name& payer, const asset& fee );
 
       /**
-       * Redeem(burn) token
-       * only token issuer can redeem(burn) its own token
+       * Retire(burn) token
+       * only token issuer can retire(burn) its own token
        * @param qty token quantity (amount, symbol) to redeem
-       * @param tag user tag string to identity a specific redeem action (application-specific purpose)
+       * @param memo user memo string to identity a specific redeem action (application-specific purpose)
        */
       [[eosio::action]]
-      void redeem( const asset& qty, const string& tag );
+      void retire( const asset& quantity, const string& memo );
    };
 
 } } /// namespace infrablockchain::contracts

@@ -9,19 +9,19 @@ namespace infrablockchain { namespace contracts {
       check( false, "InfraBlockchain core provides built-in standard token operation, settokenmeta" );
    }
 
-   void tokenabi::issue( const name& /*t*/, const name& /*to*/, const asset& /*qty*/, const string& /*tag*/ ) {
+   void tokenabi::issue( const name& /*to*/, const asset& /*quantity*/, const string& /*memo*/ ) {
       check( false, "InfraBlockchain core provides built-in standard token operation, issue" );
    }
 
-   void tokenabi::transfer( const name& /*t*/, const name& /*from*/, const name& /*to*/, const asset& /*qty*/, const string& /*tag*/ ) {
+   void tokenabi::transfer( const name& /*from*/, const name& /*to*/, const asset& /*quantity*/, const string& /*memo*/ ) {
       check( false, "InfraBlockchain core provides built-in standard token operation, transfer" );
    }
 
-   void tokenabi::txfee( const name& /*t*/, const name& /*payer*/, const asset& /*fee*/ ) {
+   void tokenabi::txfee( const name& /*payer*/, const asset& /*fee*/ ) {
       check( false, "InfraBlockchain core provides built-in standard token operation, txfee" );
    }
 
-   void tokenabi::redeem( const asset& /*qty*/, const string& /*tag*/ ) {
+   void tokenabi::retire( const asset& /*quantity*/, const string& /*memo*/ ) {
       check( false, "InfraBlockchain core provides built-in standard token operation, redeem" );
    }
 
